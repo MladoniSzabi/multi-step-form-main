@@ -1,0 +1,25 @@
+:root {
+    font-size: 16px;
+    font-family: 'Ubuntu';
+}
+
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.background-image img {
+    width: 100%;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    width: 100%;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
