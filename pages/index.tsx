@@ -1,13 +1,11 @@
-import Image from 'next/image';
 import * as React from 'react'
+import StepSelector from '../components/StepSelector';
 
 function IndexPage() {
     return <div>
         <main>
-            <picture className='background-image'>
-                <source media='(min-width: 800px)' srcSet='/images/bg-sidebar-desktop.svg' />
-                <img src='/images/bg-sidebar-mobile.svg' alt="background image" />
-            </picture>
+            <StepSelector></StepSelector>
+            {(process.env.NODE_ENV == "development") && <img src='./mobile-design-step-1.jpg' alt="asd" className='overlay'></img>}
         </main>
     </div>
 }

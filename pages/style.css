@@ -10,10 +10,6 @@ body {
     padding: 0;
 }
 
-.background-image img {
-    width: 100%;
-}
-
 .attribution {
     font-size: 11px;
     text-align: center;
@@ -22,4 +18,14 @@ body {
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+.overlay {
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0.2;
+    pointer-events: none;
 }
