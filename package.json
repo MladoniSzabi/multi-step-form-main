@@ -1,0 +1,21 @@
+{
+  "name": "multi-step-form-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Multi-step form coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@work:MladoniSzabi/multi-step-form-main.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^13.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.0.3"
+  }
+}
