@@ -1,5 +1,6 @@
 import * as React from 'react'
 import StepSelector from '../components/StepSelector';
+import Step1 from '../components/Step1';
 
 function IndexPage() {
     return <div>
@@ -7,8 +8,9 @@ function IndexPage() {
             <div className='step-selector'>
                 <StepSelector steps={["Your Info", "Select Plan", "Add-ons", "Summary"]}></StepSelector>
             </div>
-            <div className='step'>
 
+            <div className='step-container'>
+                <Step1></Step1>
             </div>
         </main>
         {

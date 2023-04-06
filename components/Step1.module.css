@@ -1,0 +1,36 @@
+.step1-container h2 {
+    margin: 0;
+    margin-bottom: 0.4em;
+}
+
+.step1-container p {
+    line-height: 1.6em;
+    margin: 0;
+}
+
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1.2em;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em
+}
+
+.input input {
+    border: 1px solid black;
+    padding: 0.7em 1.2em;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.input label {
+    font-size: 12px;
+}
