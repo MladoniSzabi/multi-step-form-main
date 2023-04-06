@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import style from './StepSelector.module.css';
 
-export default function StepSelector({ stepCount = 4, currentStep = 0 }) {
+export default function StepSelector({ steps, currentStep = 0 }) {
     return <div className={style['step-selector-container']}>
         <picture className='background-image'>
             <source media='(min-width: 800px)' srcSet='/images/bg-sidebar-desktop.svg' />
@@ -10,7 +10,13 @@ export default function StepSelector({ stepCount = 4, currentStep = 0 }) {
         </picture>
 
         <div className={style['steps-container']}>
-            {[...Array(stepCount)].map((_, index) => <div className={style.step} data-selected={(currentStep == index) ? "yes" : "no"}>{index + 1}</div>)}
+            {steps.map((text, index) => <div className={style.step} data-selected={(currentStep == index) ? "yes" : "no"}>
+                <div key={index}  >
+                    {index + 1}
+                </div>
+                <p>Step{index + 1}</p>
+                <p>{text}</p>
+            </div>)}
         </div>
     </div>
 }

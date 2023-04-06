@@ -29,3 +29,22 @@ body {
     opacity: 0.2;
     pointer-events: none;
 }
+
+@media (min-width: 800px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        max-width: 58.8rem;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .step-selector {
+        position: relative;
+        padding: 1em;
+        padding-top: 2.2em;
+    }
+}
