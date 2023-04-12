@@ -3,6 +3,21 @@ import StepSelector from '../components/StepSelector';
 import Step1 from '../components/Step1';
 
 function IndexPage() {
+
+    const [currentStep, setCurrentStep] = React.useState(0);
+    let steps = []
+
+    function nextStep(steps) {
+        setCurrentStep(prevStep => {
+            if (prevStep >= steps.length - 1) {
+                return prevStep;
+            } else {
+                return prevStep + 1
+            }
+        })
+    }
+    steps.push(<Step1 nextStep={() => { nextStep(steps) }}></Step1>, <p>Finished!</p>)
+
     return <div>
         <main>
             <div className='step-selector'>
@@ -10,7 +25,7 @@ function IndexPage() {
             </div>
 
             <div className='step-container'>
-                <Step1></Step1>
+                {steps[currentStep]}
             </div>
         </main>
         {

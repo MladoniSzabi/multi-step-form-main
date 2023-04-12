@@ -10,7 +10,7 @@ export default function StepSelector({ steps, currentStep = 0 }) {
         </picture>
 
         <div className={style['steps-container']}>
-            {steps.map((text, index) => <div className={style.step} data-selected={(currentStep == index) ? "yes" : "no"}>
+            {steps.map((text, index) => <div key={index} className={style.step} data-selected={(currentStep == index) ? "yes" : "no"}>
                 <div key={index}  >
                     {index + 1}
                 </div>
