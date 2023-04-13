@@ -28,7 +28,7 @@
 
 .input {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 0.2em
 }
 
@@ -41,8 +41,26 @@
     letter-spacing: 0.5px;
 }
 
-.input label {
+.input div {
+    display: flex;
+    justify-content: space-between;
     font-size: 12px;
+}
+
+.input .error-text {
+    color: hsl(354, 84%, 57%)
+}
+
+.input input.error-input {
+    border-color: hsl(354, 84%, 57%);
+}
+
+.input input:focus {
+    border-color: blue;
+}
+
+.input input:focus+div .error-text {
+    display: none;
 }
 
 @media (min-width:800px) {
