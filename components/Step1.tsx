@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import style from './Step1.module.css'
+import Step from './Step'
 
 export default function Step1({ nextStep }) {
 
@@ -33,44 +34,42 @@ export default function Step1({ nextStep }) {
         }
     }
 
-    function validateForm() {
-        return Array.from(document.querySelectorAll(".step1-container input"))
-            .map((val) => (val as HTMLInputElement).validity.valid)
-            .every((val) => val)
-    }
-
-    function _nextStep() {
-        if (validateForm()) {
-            nextStep()
-        }
-    }
-
     function onInputChange(event, index) {
         writeError(event.target, index)
         setInputText(prevInputText => prevInputText.map((val, i) => (i == index) ? event.target.value : val))
     }
 
-    return <div className={'step1-container ' + style['step1-container']}>
-        <div className={style['form-container']}>
-            <div>
-                <h2>Personal info</h2>
-                <p>Please provide your name, email address, and phone number.</p>
-            </div>
+    function _nextStep() {
+        console.log(`.${style.input} input`)
+        const elements = Array.from(document.querySelectorAll(`.${style.input} input`))
+        console.log(elements)
+        const isValid = elements.map((el, index) => {
+            const inputElements = (el as HTMLInputElement)
+            if (!inputElements.validity.valid) {
+                setErrors(oldError => oldError.map((val, i) => (i == index) ? inputElements.validationMessage : val))
+                return false;
+            }
+            return true
+        })
 
-            <div className={style['inputs-container']}>
+        if (isValid.every((el) => el == true)) {
+            nextStep()
+        }
+    }
 
-                {inputElements.map((el, index) => <div key={el.label} className={style.input}>
-                    <input value={inputText[index]} onChange={(ev) => onInputChange(ev, index)} className={errors[index] === "" ? "" : style['error-input']} required type={el.type} id={'step1-' + el.label.replace(" ", "-")} placeholder={el.placeholder} />
-                    <div>
-                        <label htmlFor={'step1-' + el.label.replace(" ", "-")}>{el.label}</label>
-                        <span className={'error-text ' + style["error-text"]}>{errors[index]}</span>
-                    </div>
+    return <Step
+        header={"Personal info"}
+        paragraph={"Please provide your name, email address, and phone number."}
+        inputs={
+            inputElements.map((el, index) => <div key={el.label} className={style.input}>
+                <input value={inputText[index]} onChange={(ev) => onInputChange(ev, index)} className={errors[index] === "" ? "" : style['error-input']} required type={el.type} id={'step1-' + el.label.replace(" ", "-")} placeholder={el.placeholder} />
+                <div>
+                    <label htmlFor={'step1-' + el.label.replace(" ", "-")}>{el.label}</label>
+                    <span className={'error-text ' + style["error-text"]}>{errors[index]}</span>
+                </div>
 
-                </div>)}
-            </div>
-        </div>
-        <div className='next-button'>
-            <button onClick={_nextStep}>Next Step</button>
-        </div>
-    </div>
+            </div>)}
+        nextStep={_nextStep}
+        canGoBack={false}
+    ></Step>
 }

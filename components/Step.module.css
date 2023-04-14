@@ -1,0 +1,33 @@
+.step-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.form-container h2 {
+    margin: 0
+}
+
+.form-container p {
+    line-height: 1.6em;
+}
+
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+}
+
+@media (min-width:800px) {
+    .form-container {
+        gap: 1em;
+    }
+}
