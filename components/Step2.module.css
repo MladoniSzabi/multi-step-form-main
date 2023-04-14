@@ -1,0 +1,16 @@
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.plans-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.bill-type-selector {
+    display: flex;
+    justify-content: center;
+}

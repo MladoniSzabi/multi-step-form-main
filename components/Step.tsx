@@ -3,12 +3,7 @@ import * as React from 'react'
 import style from './Step.module.css'
 
 
-export default function Step({ header, paragraph, inputs, canGoBack, nextStep }) {
-
-    function _prevStep() {
-
-    }
-
+export default function Step({ header, paragraph, inputs, nextStep, previousStep = null }) {
     return <div className={style['step-container']}>
         <div className={style['form-container']}>
             <div>
@@ -21,8 +16,8 @@ export default function Step({ header, paragraph, inputs, canGoBack, nextStep })
             </div>
         </div>
         <div className='next-button'>
+            {previousStep && <button onClick={previousStep}>Back</button>}
             <button onClick={nextStep}>Next Step</button>
-            {canGoBack && <button onClick={_prevStep}>Back</button>}
         </div>
     </div>
 }

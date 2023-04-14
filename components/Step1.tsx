@@ -70,6 +70,5 @@ export default function Step1({ nextStep }) {
 
             </div>)}
         nextStep={_nextStep}
-        canGoBack={false}
     ></Step>
 }
