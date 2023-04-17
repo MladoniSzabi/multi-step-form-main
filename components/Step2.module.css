@@ -6,8 +6,8 @@
 
 .plans-container {
     display: flex;
-    flex-direction: row;
-    gap: 1em;
+    flex-direction: column;
+    gap: 0.5em;
 }
 
 .bill-type-selector {

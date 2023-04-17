@@ -26,8 +26,16 @@
     gap: 1em;
 }
 
+.step-container h2 {
+    font-size: 24px;
+}
+
 @media (min-width:800px) {
     .form-container {
         gap: 1em;
+    }
+
+    .step-container h2 {
+        font-size: 32px;
     }
 }

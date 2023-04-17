@@ -93,10 +93,6 @@ main {
     background-color: hsl(213, 49%, 40%);
 }
 
-h2 {
-    font-size: 32px;
-}
-
 @media (min-width: 800px) {
 
     .next-button {

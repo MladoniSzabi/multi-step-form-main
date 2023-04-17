@@ -41,8 +41,8 @@ function IndexPage() {
         {
             (process.env.NODE_ENV == "development") &&
             <picture>
-                <source media='(min-width: 800px)' srcSet='./desktop-design-step-1.jpg'></source>
-                <img src='./mobile-design-step-1.jpg' alt="preview" className='overlay'></img>
+                <source media='(min-width: 800px)' srcSet='./desktop-design-step-2.jpg'></source>
+                <img src='./mobile-design-step-2.jpg' alt="preview" className='overlay'></img>
             </picture>
         }
     </div>

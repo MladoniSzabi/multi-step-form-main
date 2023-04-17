@@ -11,26 +11,26 @@ export default function Step2({ nextStep, previousStep }: arguments) {
     const plans = [
         {
             type: "Arcade",
-            icon: "",
+            icon: "/images/icon-arcade.svg",
             monthly: 9,
             yearly: 90
         },
         {
-            type: "Arcade",
-            icon: "",
-            montly: 12,
+            type: "Advanced",
+            icon: "/images/icon-advanced.svg",
+            monthly: 12,
             yearly: 120
         },
         {
-            type: "Arcade",
-            icon: "",
+            type: "Pro",
+            icon: "/images/icon-pro.svg",
             monthly: 15,
             yearly: 150
         }
     ]
 
     const [isMonthly, setIsMonthly] = React.useState(true)
-    const [plan, setPlan] = React.useState(0)
+    const [currentplan, setCurrentPlan] = React.useState(0)
 
     function _nextStep() {
         nextStep()
@@ -41,13 +41,14 @@ export default function Step2({ nextStep, previousStep }: arguments) {
     }
 
     return <Step
-        header={"Personal info"}
-        paragraph={"Please provide your name, email address, and phone number."}
+        header={"Select your plan"}
+        paragraph={"You have the option of monthly or yearly billing."}
         inputs={<div className={style.inputs}>
             <div className={style['plans-container']}>
                 {plans.map(el => <Plan
+                    key={el.type}
                     icon={el.icon}
-                    price={isMonthly ? el.monthly : el.yearly}
+                    price={isMonthly ? ('$' + el.monthly + '/mo') : ('$' + el.yearly + '/yr')}
                     type={el.type}
                 ></Plan>)}
             </div>
