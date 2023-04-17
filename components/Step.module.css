@@ -82,4 +82,9 @@
     .navigation-button-container .next-button {
         padding: 1.1em 1.7em;
     }
+
+    .navigation-button-container {
+        position: unset;
+        padding: 0
+    }
 }
