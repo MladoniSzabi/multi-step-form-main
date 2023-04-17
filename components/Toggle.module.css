@@ -1,0 +1,35 @@
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding: 1em;
+    background-color: hsl(229, 24%, 87%);
+    border-radius: 10px;
+    user-select: none;
+}
+
+.toggle-container>span {
+    cursor: pointer;
+}
+
+.toggle-button-container {
+    height: 0.8rem;
+    padding: 0.2rem;
+    width: 2.1rem;
+    border-radius: 1.2rem;
+    background-color: hsl(213, 96%, 18%);
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.toggle-container input:checked+.toggle-button-container {
+    justify-content: flex-end;
+}
+
+.toggle-button {
+    height: 0.8rem;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    background-color: white;
+}
