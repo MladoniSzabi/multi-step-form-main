@@ -30,6 +30,46 @@
     font-size: 24px;
 }
 
+.navigation-button-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation-button-container.one-child {
+    justify-content: flex-end;
+}
+
+.navigation-button-container button {
+    all: unset;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+    color: hsl(231, 11%, 63%);
+}
+
+.navigation-button-container .next-button {
+    padding: 0.8em;
+    color: white;
+    background: hsl(213, 96%, 18%);
+    border-radius: 5px;
+}
+
+.navigation-button-container .next-button:hover {
+    background-color: hsl(213, 74%, 21%);
+}
+
+.navigation-button-container .next-button:active {
+    background-color: hsl(213, 49%, 40%);
+}
+
 @media (min-width:800px) {
     .form-container {
         gap: 1em;
@@ -37,5 +77,9 @@
 
     .step-container h2 {
         font-size: 32px;
+    }
+
+    .navigation-button-container .next-button {
+        padding: 1.1em 1.7em;
     }
 }
