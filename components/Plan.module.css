@@ -2,10 +2,13 @@
     display: flex;
     flex-direction: row;
 
-    border: solid 1px black;
+    border: solid 1px hsl(231, 11%, 63%);
     border-radius: 10px;
     padding: 1em;
     gap: 1em;
+
+    user-select: none;
+    cursor: pointer;
 }
 
 .plan-container img {
@@ -19,6 +22,21 @@
 
 .plan-container p {
     font-size: 14px;
+}
+
+.container input {
+    position: absolute;
+    visibility: hidden;
+}
+
+input:checked~label .plan-container {
+    border-color: hsl(243, 100%, 62%);
+}
+
+.plan-container:hover {
+    border-color: hsl(243, 100%, 62%);
+    background-color: hsla(243, 100%, 62%, 10%);
+    /*hsl(228, 100%, 84%)*/
 }
 
 @media (min-width:800px) {
