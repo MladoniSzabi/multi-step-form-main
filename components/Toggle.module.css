@@ -3,9 +3,11 @@
     justify-content: center;
     gap: 1em;
     padding: 1em;
-    background-color: hsl(229, 24%, 87%);
+    background-color: hsl(217, 100%, 97%);
     border-radius: 10px;
     user-select: none;
+    color: hsl(231, 11%, 63%);
+    font-weight: 700;
 }
 
 .toggle-container>span {
@@ -32,4 +34,8 @@
     aspect-ratio: 1;
     border-radius: 100%;
     background-color: white;
+}
+
+.toggle-active {
+    color: hsl(213, 96%, 18%);
 }

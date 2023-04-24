@@ -11,6 +11,10 @@
     cursor: pointer;
 }
 
+.plan-container h4 {
+    color: hsl(213, 96%, 18%);
+}
+
 .plan-container img {
     height: 100%;
 }
@@ -35,8 +39,7 @@ input:checked~label .plan-container {
 
 .plan-container:hover {
     border-color: hsl(243, 100%, 62%);
-    background-color: hsla(243, 100%, 62%, 10%);
-    /*hsl(228, 100%, 84%)*/
+    background-color: hsl(217, 100%, 97%);
 }
 
 @media (min-width:800px) {

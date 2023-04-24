@@ -15,13 +15,13 @@ export default function Toggle({ on = "On", off = "Off", onToggled, isOn = false
     }
 
     return <div className={style['toggle-container']}>
-        <span onClick={setOff}>{off}</span>
+        <span onClick={setOff} className={!isOn && style['toggle-active']}>{off}</span>
         <label>
             <input type='checkbox' onChange={() => onToggled((val) => !val)} checked={isOn} />
             <div className={style['toggle-button-container']}>
                 <div className={style['toggle-button']}></div>
             </div>
         </label>
-        <span onClick={setOn}>{on}</span>
+        <span onClick={setOn} className={isOn && style['toggle-active']}>{on}</span>
     </div>
 }

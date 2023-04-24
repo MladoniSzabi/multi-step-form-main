@@ -16,7 +16,7 @@ export default function Step({ header, paragraph, inputs, nextStep, previousStep
             </div>
         </div>
         <div className={style['navigation-button-container'] + (previousStep == null ? (' ' + style['one-child']) : '')}>
-            {previousStep && <button onClick={previousStep}>Go Back</button>}
+            {previousStep && <button onClick={previousStep} className={style['back-button']}>Go Back</button>}
             <button className={style['next-button']} onClick={nextStep}>Next Step</button>
         </div>
     </div>

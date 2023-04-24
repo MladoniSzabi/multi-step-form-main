@@ -59,7 +59,7 @@
     padding: 0.8em;
     color: white;
     background: hsl(213, 96%, 18%);
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .navigation-button-container .next-button:hover {
@@ -68,6 +68,10 @@
 
 .navigation-button-container .next-button:active {
     background-color: hsl(213, 49%, 40%);
+}
+
+.navigation-button-container .back-button:hover {
+    color: hsl(213, 74%, 21%);
 }
 
 @media (min-width:800px) {
