@@ -15,6 +15,10 @@
     justify-content: center;
 }
 
+.error-text {
+    color: hsl(354, 84%, 57%)
+}
+
 @media (min-width:800px) {
     .plans-container {
         flex-direction: row;

@@ -31,10 +31,20 @@ export default function Step2({ nextStep, previousStep }: arguments) {
     ]
 
     const [isYearly, setIsYearly] = React.useState(false)
-    const [currentplan, setCurrentPlan] = React.useState(0)
+    const [currentplan, setCurrentPlan] = React.useState(null)
+    const [errorMsg, setErrorMsg] = React.useState('')
+
+    function onPlanSelected(plan) {
+        setCurrentPlan(plan)
+        setErrorMsg('')
+    }
 
     function _nextStep() {
-        nextStep()
+        if (currentplan !== null) {
+            nextStep()
+        } else {
+            setErrorMsg("You must select a plan")
+        }
     }
 
     function _previousStep() {
@@ -45,13 +55,17 @@ export default function Step2({ nextStep, previousStep }: arguments) {
         header={"Select your plan"}
         paragraph={"You have the option of monthly or yearly billing."}
         inputs={<div className={style.inputs}>
-            <div className={style['plans-container']}>
-                {plans.map(el => <Plan
-                    key={el.type}
-                    icon={el.icon}
-                    price={isYearly ? ('$' + el.yearly + '/yr') : ('$' + el.monthly + '/mo')}
-                    type={el.type}
-                ></Plan>)}
+            <div>
+                {errorMsg && <span className={style['error-text']} >{errorMsg}</span>}
+                <div className={style['plans-container']}>
+                    {plans.map(el => <Plan
+                        onPlanSelected={() => onPlanSelected(el.type)}
+                        key={el.type}
+                        icon={el.icon}
+                        price={isYearly ? ('$' + el.yearly + '/yr') : ('$' + el.monthly + '/mo')}
+                        type={el.type}
+                    ></Plan>)}
+                </div>
             </div>
             <Toggle
                 on={<span className={style['toggle-text']}>Yearly</span>}
